@@ -1,0 +1,168 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-offset-4">
+            <div class="panel border">
+                <div class="panel-heading">Fill_Your_Details!</div>
+
+<div class="panel-body p-3">
+    <form [formGroup]="registerForm" (ngSubmit)="postRegistationDetails()">
+
+
+<div class="form-group">
+     <div class="input-field">
+        <label for="cars">Choose your membership plan:</label>
+         <select name="membership" id="membership">
+          <option value="volvo">Family_MemberShip_Annual</option>
+          <option value="saab">Family_MemberShip_HalfYearly</option>
+           <option value="opel">Family_MemberShip_Trial</option>
+
+            <option value="volvo">Individual_MemberShip_Annual</option>
+             <option value="saab">Individual_MemberShip_HalfYearly</option>
+            <option value="opel">Individual_MemberShip_Trial</option>
+
+            <option value="volvo">Child_MemberShip_Annual</option>
+            <option value="saab">Child_MemberShip_HalfYearly</option>
+            <option value="opel">Child_MemberShip_Trial</option>
+     </select>
+  </div>
+</div>
+<br>
+<div class="form-group">
+    <div class="input-field" [class.error]="registerForm.controls['emailid'].dirty && registerForm.hasError('registerForm','emailid')">
+        <input style="width: 250px;"  type="text"
+        id="Email_Id"
+        formControlName ="emailid"
+        class="form-control" placeholder="Email_Id">
+       
+    </div>
+    <small class="text-danger">*Email_Id is Required</small>
+</div>
+<br>
+<div class="form-group">
+    <div class="input-field">
+        <table>
+            <th>
+        <label for="cars">Name:</label></th>
+        <th>
+        <select name="membership" id="membership">
+         <option value="volvo">Miss</option>
+         <option value="saab">Mr</option>
+         <option value="opel">Mrs</option>
+         <option value="volvo">Ms</option>
+         </select>
+        </th>
+     <th>
+
+        <input style="width: 250px;"  type="text"
+        id="User_Name"
+        formControlName ="User_Name"
+        class="form-control" placeholder="User_Name"> 
+    </th><small class="text-danger">*User_Name is Required</small>
+    </table>
+
+  </div>
+</div>
+<div class="text-danger" 
+*ngIf="registerForm.controls['firstname'].dirty && 
+registerForm.hasError('required','firstname')"></div>
+
+<div class="form-group">
+   <div class="input-field">
+    <div class="radio-button">  
+    <label for="cars">Gender:</label><br>
+        <input  formControlName ="gender" style="width: 250px;"  type="radio" id="Female" name="Gender" value="Female">
+ 
+    <label for="html">Female</label><br>
+
+    <input style="width: 250px;"  type="radio" id="Male" name="Gender" value="Male">
+     <label for="css">Male</label><br>
+    </div>
+</div>
+</div>
+<small class="text-danger">*Gender is Required</small>
+
+<div class="form-group">
+    <div class="input-field">
+        <input style="width: 250px;"  type="date"
+            id="Date_Of_Birth"
+            formControlName ="dateofbirth"
+            class="form-control" placeholder="Date_Of_Birth"> 
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="input-field">
+        <input style="width: 250px;"  style="width: 250px;" type="text"
+            id="Mobile"
+            formControlName ="mobile" maxlength="10"
+            class="form-control" placeholder="Mobile"> 
+     </div>
+</div>
+<small class="text-danger">*Mobile_No is Required</small>
+
+
+<div class="form-group">
+    <div class="input-field">
+        <table>
+            <th>
+    <input style="width: 250px;"  type="text"
+    id="Address"
+    formControlName ="address"
+    class="form-control" placeholder="Address"></th>
+    <th>
+    <input style="width: 250px;"  type="text" id="city" name="city" value="Pune" readonly="" 
+    aria-invalid="false" class="valid" style="width: 50px;">
+</th>
+<th>
+   <input style="width: 250px;"  type="text" id="state" name="state" value="MAHARASHTRA" readonly="" style="width: 120px;">
+</th>
+</table>                                                 
+    </div>
+</div>
+<small class="text-danger">*Address is Required</small>
+
+
+<div class="form-group">
+    <div class="input-field">
+         <input style="width: 150px;"  type="text"
+          id="Pincode" formControlName ="pincode"
+               class="form-control" placeholder="Pincode"> 
+    </div>
+</div>
+<small class="text-danger">*Pincode is Required</small>
+
+
+<div class="form-group">
+    <div class="input-field" [class.error]="registerForm.controls['password'].dirty && registerForm.hasError('required','password')">
+        <span class="fa fa-lock p-2"></span>
+
+        <input style="width: 250px;" [type]="type"
+        id="Password"
+        formControlName ="password"
+        class="form-control" [(ngModel)]="password" placeholder="Password">
+
+      
+    </div>
+</div>
+<small class="text-danger">*Password is Required</small>
+
+
+
+ <button class="btn btn-primary btn-block mt-4 w-100" type="submit" style="width: 120px;" 
+ (click)="OnRegister()">Submit</button>
+
+<div class="form-inline fr mt-4">
+    <a id="forget" class="font-weight-bold">Forget Password?</a>
+</div>
+
+<div class="text-center pt-4 text-muted "> 
+You Have Already account?
+<a id="forget" routerLink="/auth/login">Login</a>
+</div>
+              
+                </form>
+            </div> 
+        </div>
+    </div>
+  </div>
+</div>

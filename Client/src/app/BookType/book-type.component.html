@@ -1,0 +1,45 @@
+<router-outlet></router-outlet>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/booktype/biography">Biography</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/booktype/comics">Comics</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/booktype/juniorcollection">Junior_Collection</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+      <div class="row">
+          <ng-container *ngFor="let item of BookTypeList">
+            <ng-container *ngFor="let item of filterCategory | filter:searchKey:'Book_Name'">
+
+              <div class="card col-md-3">
+                  <img src="{{item.img}}" alt="">
+                  <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
+                    {{item.Book_Name}}</h5>
+                  <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
+                    {{item.Book_Author}}</p>
+                  <p><strong>Book_Prize:</strong> ${{item.Book_Prize}}</p>
+                  <p><strong>Book_Rent:</strong> ${{item.Book_Rent}}</p>
+
+                  <button class="btn btn-primary" (click)=addToCart(item)>Add to cart</button>
+              </div>
+              </ng-container>
+          </ng-container>
+    </div>
+    </div>

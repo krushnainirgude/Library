@@ -1,0 +1,66 @@
+<ng-container *ngIf="BookType.length !=0">
+    <div class="container-fluid">
+        <h5 class="card-title">My_Cart</h5>
+        <div class="d-flex">
+            <button class="btn btn-success">Add Book</button>
+        </div>
+        </div>
+            <table class="table table-book">
+                <thead>
+                    <tr>
+                        <th style="width: 10px;">Book_Id</th>
+                        <th style="width: 10px;">Book</th>
+                        <th style="width: 120px;">Book_Name</th>
+                        <th style="width: 100px;">Author_Name</th>
+                        <th style="width: 12px;">Book_Prize</th>
+                        <th style="width: 12px;">Book_Rent</th>
+                        <th style="width: 12px;">Quantity</th>
+                        <th style="width: 12px;">Total</th>
+                        <th style="width: 12px;">book.Action</th>
+                     </tr>
+                </thead>
+              <tbody>
+                <tr *ngFor="let book of BookType; let i=index">
+                <td>{{i+1}}</td>
+                <th><img style="width: 50px;" src="{{book.img}}" alt=""></th>
+                <td>{{book.Book_Name}}</td>
+                <td>{{book.Author_Name}}</td>
+                <td>{{book.Book_Prize}}</td>
+                <td>{{book.Book_Rent}}</td>
+                <td>{{book.Quantity}}</td>
+                <td>{{book.Total}}</td>
+
+                <td><button (click)="removeItem(removeItem)" routerLink="cart" class="btn btn-danger">
+                <i class="fas fa-trash-alt"></i></button></td>
+            </tr>
+           
+
+                <tr>
+                <td colspan="4"></td>
+                <td><button (click)="emptyCart()" class="btn btn-danger">Empty_Cart</button></td>
+                <td><button routerLink="/booktype" class="btn btn-primary">Shop_More</button></td>
+                <td><button class="btn btn-success">Check_Out</button></td>
+                <td><strong>Total:${{Total}}</strong></td>
+                </tr>
+            </tbody>
+    </table>
+
+
+</ng-container>
+
+<ng-container *ngIf="BookType.length ==0">
+<div class="container">
+    <div class="card">
+        <h5 class="card-title">My_Cart</h5>
+        </div>
+        <div class="center">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpJrkDkfjh8l1lEfm60reyN8kmSwNKpN7mbg&usqp=CAU">
+            <h4>Your_Cart_Is_Empty!</h4>
+            <h6>Add_Item_To_It_Now!</h6>
+<button routerLink="/booktype" class="btn btn-primary">Shop_Now</button>
+</div>
+</div>
+</ng-container>
+
+
+    

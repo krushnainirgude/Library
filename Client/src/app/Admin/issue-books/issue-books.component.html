@@ -1,0 +1,126 @@
+<p>issue-books works!</p>
+
+<div class="box-header with-border">
+</div>
+<div class="box-body">
+  <div class="row">
+    <div class="col-sm-9">
+      <form class="form-horizontal">
+        <div class="tab-content shadow">
+          <div class="tab-pane active">
+            <div class=" panel panel-custom">
+              <div class="panel-heading">
+                <div class="panel-title">
+                  <strong>Issue Books</strong>
+                </div>
+              </div>
+              <div class="panel-body form-horizontal">
+                <input type="hidden" name="action" value="issue_book" autocomplete="off">
+
+                <div class="form-group mb0 col-sm-12">
+
+                  <label>Book No</label>
+
+
+                </div>
+
+
+                <div class="form-group mb0 col-sm-12">
+
+                  <label>Book
+                    Title</label>
+
+                  <input name="book_title" id="book_title" ng-model="book_title" placeholder="Book Title" class="form-control ng-pristine ng-untouched ng-valid ng-empty" type="text" disabled="">
+
+
+                </div>
+
+                <div class="form-group mb0 col-sm-12">
+                  <table class="table table-bordered ng-hide" ng-show="qty !=null" style="border: 1px solid lightgrey;">
+                    <tbody>
+                    <tr>
+                      <td style="background: beige;">Total Oty</td>
+                      <td class="ng-binding"></td>
+                      <td style="background: beige;">Current Available</td>
+                      <td class="ng-binding">0</td>
+                      <td style="background: beige;">Borrowed</td>
+                      <td class="ng-binding"></td>
+                    </tr>
+                    <tr>
+                      <td style="background: beige;">Price</td>
+                      <td class="ng-binding">Rs. </td>
+                      <td style="background: beige;">ISBN</td>
+                      <td colspan="3" class="ng-binding"></td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="form-group mb0 col-sm-12">
+                  <label>User Id</label>
+                  <input name="user_id" id="user_id" ng-model="user_id" ng-change="user_idChange()" placeholder="Type User ID. Eg : 1001" class="form-control ng-pristine ng-untouched ng-valid ng-empty" type="text">
+                </div>
+
+
+                <div class="form-group mb0 col-sm-12">
+
+                  <label>Name</label>
+
+                  <input name="user_name" id="user_name" ng-model="user_name" placeholder="Persons Name" class="form-control ng-pristine ng-untouched ng-valid ng-empty" type="text" disabled="">
+
+
+                </div>
+
+                <div class="form-group mb0 col-sm-12">
+                  <table class="table table-bordered ng-hide" ng-show="phone !=null" style="border: 1px solid lightgrey;">
+                    <tbody>
+                    <tr>
+                      <td style="width: 23%;" rowspan="2"><img ng-src="https://wordpress.library-management.com/wp-content/themes/library/img/146x146.png" class="img-thumbnail" alt="User PIc" src="https://wordpress.library-management.com/wp-content/themes/library/img/146x146.png"></td>
+                      <td style="background: beige;">Phone</td>
+                      <td class="ng-binding"></td>
+                      <td style="background: beige;">Email</td>
+                      <td class="ng-binding"></td>
+                    </tr>
+                    <tr>
+                      <td style="background: beige;">Address</td>
+                      <td colspan="4" class="ng-binding"></td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="form-group mb0 col-sm-6">
+                  <label>Date Issued</label>
+
+                  <input name="book_date_borrowed" ng-model="book_date_borrowed" id="book_date_borrowed" class="form-control fix_radius ng-pristine ng-untouched ng-valid ng-empty" type="text">
+
+
+                </div>
+
+
+                <div class="form-group mb0 col-sm-6">
+                  <label>By when to Return</label>
+
+                  <input name="book_date_due" ng-model="book_date_due" id="book_date_due" class="form-control fix_radius ng-pristine ng-untouched ng-valid ng-empty" type="text">
+
+                </div>
+
+
+                <div class="form-group mb0 col-sm-12">
+                  <button type="button" ng-disabled="btn_issue_status" ng-init="btn_issue_status=true" ng-click="issueBookBtn()" class="btn btn-danger pmd-ripple-effect pull-right" disabled="disabled">
+                    <span class="fa fa-floppy-o"></span>Issue Book                        </button>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+      
+
+    </div></form>
+  </div>
+</div>
+
+
+</div>

@@ -1,0 +1,125 @@
+<div class="container">
+<div class="row">
+    <div class="col-md-12">
+ <div class="table-responsive">
+        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-6"></div><div class="col-sm-6"></div></div><div class="row"><div class="col-sm-12"><table class="table table-bordered table-striped tbl_fine_dt dataTable no-footer" style="font-size: small; margin-bottom: 0px; width: 1014px;" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+          <thead>
+          <tr role="row"><th style="display: none; width: 0px;" class="sorting_disabled" rowspan="1" colspan="1">?</th><th class="fin_bid sorting_disabled" style="width: 65px;" rowspan="1" colspan="1">Book ID</th><th class="fin_bookname sorting_disabled" style="width: 270px;" rowspan="1" colspan="1">Book Name</th><th class="fin_Stid sorting_disabled" style="width: 60px;" rowspan="1" colspan="1">User ID</th><th class="fin_sname sorting_disabled" style="width: 49px;" rowspan="1" colspan="1">Name</th><th class="fin_iss_date sorting_disabled" style="width: 95px;" rowspan="1" colspan="1">Issued Date</th><th class="fin_date_due sorting_disabled" style="width: 76px;" rowspan="1" colspan="1">Date Due</th><th class="fin_delayed_by sorting_disabled" style="width: 91px;" rowspan="1" colspan="1">Delayed By</th><th class="fin_fine sorting_disabled" style="width: 37px;" rowspan="1" colspan="1">Fine</th><th class="fin_notes sorting_disabled" style="width: 48px;" rowspan="1" colspan="1">Notes</th><th class="fin_Actions sorting_disabled" style="width: 54px;" rowspan="1" colspan="1">Action</th></tr>
+          </thead>
+          <tbody id="tb_manage_issue_book_container">
+
+          <tr class="odd"><td colspan="10" class="dataTables_empty" valign="top">No data available in table</td></tr></tbody>
+
+        </table></div></div><div class="row"><div id="fnd_detail_holder" class="col-sm-12" style="border: 1px solid lightgray;margin-bottom: 9px;">
+          <div ng-show="issue_book_db.length" class="col-sm-12 ng-hide">
+            <div style="font-size: 20px;text-align: right;border-right: 1px solid lightgray;" class="col-sm-10">Total
+            </div>
+            <div style="text-align:left;color: #099033;font-size: 20px;" class="col-sm-2 ng-binding">
+              0
+            </div>
+          </div>
+        </div><div class="col-sm-5"><div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div></div><div class="col-sm-7"><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"><ul class="pagination"><li class="paginate_button previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0">Previous</a></li><li class="paginate_button next disabled" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0">Next</a></li></ul></div></div></div></div>
+
+        
+
+
+      </div>
+
+
+      <div class="modal fade" id="editReturnBookData" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog lg-modal" style="width:40%;">
+          <div class="modal-content fix_radius">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+              </button>
+              <h3 class="modal-title" id="lineModalLabel">Return Books Fines
+                Mangement</h3>
+            </div>
+            <div class="modal-body" style="padding-top: 10px;padding-right: 35px;">
+              <div class="row">
+                <div class="holder_sub_book_lst">
+                  <table class="table table-bordered tbl_book_lst">
+                    <tbody>
+                    <tr>
+
+                      <td style="padding: 13px;font-size: large;">
+                          Rs.                              </td>
+                      <td>
+                        <input type="text" id="fine" placeholder="Fine if Any.." ng-model="fine" class="form-control fix_radius ng-pristine ng-untouched ng-valid ng-empty">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                                                        <textarea rows="2" id="notes" ng-model="notes" class="form-control fix_radius ng-pristine ng-untouched ng-valid ng-empty" placeholder="Note if any"></textarea>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <div style="float:right;">
+                          <button class="btn btn-primary fix_radius" ng-click="btn_UpdateRecord()">Update Record
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="modal fade" id="sendSmsModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog lg-modal" style="width:40%;">
+          <div class="modal-content fix_radius">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+              </button>
+              <h3 class="modal-title" id="lineModalLabel">Send Sms</h3>
+            </div>
+            <div class="modal-body" style="padding-top: 10px;padding-right: 35px;">
+              <div class="row">
+                <div class="holder_sub_book_lst">
+                  <div class="table-responsive">
+                    <table class="table table-bordered tbl_book_lst">
+                      <tbody>
+                      <tr>
+                        <td>
+                          <div class="input-group">
+                            <input type="text" id="sms_mob" ng-model="sms_mob" class="form-control fix_radius ng-pristine ng-untouched ng-valid ng-empty" ng-readonly="sms_mob_status">
+                            <span class="input-group-addon edt_mob_ret" ng-click="reset_sms_mob()">
+                        <i class="fa fa-pencil-square-o"></i>
+                        </span>
+                          </div>
+                        </td>
+
+                      </tr>
+                      <tr>
+                        <td>
+                                                        <textarea rows="2" id="sms_body" ng-model="sms_body" class="form-control fix_radius ng-pristine ng-untouched ng-valid ng-empty" placeholder="Sms Body"></textarea>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="3">
+                          <div style="float:right;">
+                            <button class="btn btn-primary fix_radius" ng-click="btn_sendSms()">Send Sms
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

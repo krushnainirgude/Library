@@ -1,0 +1,65 @@
+.sidenav {
+    height: auto;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    background-color:steelblue;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    height: 130px;
+    color: black;
+ 
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  .main {
+    margin-left: 300px; 
+    padding: auto;
+  }
+.cart-top{
+  position: relative;
+  display: flex;
+  flex-direction:column;
+  min-width: none;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border:1px solid rgba(0, 0, 0, 0.2);
+  border-radius: .25rem;
+}
+.img{
+  width: 64px;
+}
+.book{
+  margin: 0px,15px;
+text-align: center;
+}
+.book a:hover{
+  color: blue;
+}
+.cart{
+  padding: 20px;
+  margin: 50px;
+}
+.cart-img{
+  width: 200px;
+  height: 200px;
+  margin-bottom: 15px;
+  transition: 03s ease-in-out;
+}
+.cart-img:hover{
+  transform: 03s ease-in-out;
+  transition: scale(1.1);
+}
+.row{
+  margin-left: 300px;
+}

@@ -1,0 +1,96 @@
+
+<div class="col-md-9 col-sm-12">
+    <div class="tab-content shadow AddBookCtrl" style="border: 0;padding:0;">
+       <div class="tab-pane active">
+            <div class="panel panel-custom">
+                <div class="panel-heading">
+                     <div class="panel-title">
+                        <strong>Add Book</strong>
+                                </div>
+                            </div>
+                            <hr>
+<div class="panel-body form-horizontal">
+    <input type="hidden" name="action" value="add_book_data" autocomplete="off">
+    <input type="hidden" name="book_src" id="book_src" autocomplete="off">
+    <input type="hidden" name="book_goo_id" id="book_goo_id" autocomplete="off">
+        <div class="form-group mb0 col-sm-6">
+           <label>LBCNO</label>
+<input name="book_isbn" placeholder="Enter LBCNO"
+   ng-blur="look_for_book()"
+    class="form-control isbn_txt ng-pristine ng-untouched ng-valid ng-empty"
+    type="text">
+ </div>
+<div class="form-group mb0 col-sm-6">
+     <label>Author Name</label>
+<input name="book_author" id="book_author" 
+    placeholder="Enter Author Name"
+      class="form-control ng-pristine ng-untouched ng-valid ng-empty" type="text">
+
+     </div>
+             <div class="form-group mb0 col-sm-6">
+                  <label>Book Title *</label>
+
+            <input name="book_title" id="book_title" 
+            placeholder="Enter Book Title"
+          class="form-control ng-pristine ng-untouched ng-valid ng-empty" type="text">
+
+     </div>
+<br>
+<div class="form-group mb0 col-sm-6">
+     <div class="input-field">
+        <label for="cars">Category *</label>
+                <select placeholder="Category" name="membership" id="membership">
+                 <option value="volvo">Biography</option>
+                 <option value="saab">Comcis</option>
+                  <option value="opel">Junor-Collection</option>
+                  <option value="opel">History</option>
+                </select>
+         </div>
+       </div>
+<br>
+   
+<div class="form-group mb0 col-sm-6">
+     <label>Publisher</label>
+<input name="book_publisher" id="book_publisher" ng-model="book_publisher"
+ placeholder="Enter Publisher Name"
+        class="form-control ng-pristine ng-untouched ng-valid ng-empty" type="text">
+
+</div>
+
+ <div class="form-group mb0 col-sm-6">
+    <div class="input-field">
+       <label for="cars">Prize *</label>
+               <select placeholder="Category" name="membership" id="membership">
+                <option value="volvo">50</option>
+                <option value="saab">100</option>
+               </select>
+        </div>
+      </div>
+
+
+  <div class="form-group mb0 col-sm-6">
+     <label>Quantity *</label>
+ <input type="number" id="book_qty"
+        placeholder="Enter Book Quantity"
+          class="form-control fix_radius ng-pristine ng-untouched ng-valid ng-not-empty">
+
+ </div>
+  <div class="form-group mb0 col-sm-6">
+         <label>Book Description</label>
+<textarea rows="4" id="book_desc"
+    class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+      name="book_desc"
+         placeholder="Enter Book Description"></textarea>
+
+ </div>
+     <div class="form-group md0 col-sm-12" style="padding-right: 0px;">
+        <button type="button" routerLink="/managebooks" 
+            class="btn btn-primary fix_radius pmd-ripple-effect pull-right add_btn_book"><span
+               class="fa fa-floppy-o" style="margin-right: 6px;"></span>Add Book </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+      
+     
